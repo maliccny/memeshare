@@ -100,7 +100,6 @@ src
       |__ ShowPosts.jsx
       |__ PostDetail.jsx
       |__ UpdatePost.jsx
-      |__ Main.jsx
       |__ UpdateComment.jsx
       |__ Header.jsx
       |__ Footer.jsx
@@ -116,23 +115,39 @@ src
 
 
 
-|  Component   |    Type    | state | props | Description                                                      |
-| :----------: | :--------: | :---: | :---: | :--------------------------------------------------------------- |
-|    Header    | functional |   n   |   n   | _The header will contain the navigation and logo._               |
-|  Navigation  | functional |   n   |   n   | _The navigation will provide a link to each of the pages._       |
-|   Gallery    |   class    |   y   |   n   | _The gallery will render the posts using cards in flexbox._      |
-| Gallery Card | functional |   n   |   y   | _The cards will render the post info via props._                 |
-|    Footer    | functional |   n   |   n   | _The footer will show info about me and a link to my portfolio._ |
+|    Component     |    Type    | state | props | Description                                                                                       |
+| :--------------: | :--------: | :---: | :---: | :------------------------------------------------------------------------------------------------ |
+|    Login         |   class    |   y   |   n   | _The login page, will contain state for user inputs_                                              |
+|    Register      |   class    |   y   |   n   | _The Register page, will call a post request from user inputs_                                    |
+|    ShowPosts     |   class    |   y   |   y   | _Make a get request to the backend for all posts, and post request for new posts_                 |
+|    PostDetail    |   class    |   y   |   y   | _Make a get request for one post and comments and a post requst for new comments_                 |
+|    UpdatePost    |   class    |   y   |   y   | _Make a put request for updating post information_                                                |
+|    UpdateComment |   class    |   y   |   y   | _Make a put request for updating post information_                                                |
+|    Header        |   class    |   n   |   y   | _The header will show the logo and the logout button depending on if the user is signed in_       |
+|    Footer        |   class    |   n   |   n   | _The footer will show info about me and a link to my portfolio._                                  |
 
 #### Time Estimates
 
 
 
-| Task                | Priority | Estimated Time | Time Invested | Actual Time |
-| ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Task                            | Priority | Estimated Time | Time Invested | Actual Time |
+| ------------------------------- | :------: | :------------: | :-----------: | :---------: |
+| Create tables and migrations    |    H     |     3 hrs      |      hrs     |     hrs    |
+| Create models                   |    H     |     2 hrs      |      hrs     |     TBD     |
+| Create controllers              |    H     |     2 hrs      |      hrs     |     TBD     |
+| Create routes                   |    H     |     1 hrs      |      hrs     |     TBD     |
+| Create seed file                |    H     |     1 hrs      |      hrs     |     TBD     |
+| Create service folder elements  |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create login                    |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create register                 |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create showposts                |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create postdetails              |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create updatepost               |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create updatecomment            |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create header                   |    H     |     3 hrs      |      hrs     |     TBD     |
+| Create footer                   |    H     |     3 hrs      |      hrs     |     TBD     |
+
+| TOTAL                           |          |     36 hrs      |      hrs     |     TBD     |
 
 
 
