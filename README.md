@@ -46,10 +46,10 @@ MemeShare is an app which lets you share memes and jokes with friends and allows
 
 |     Library      | Description                                    |
 | :--------------: | :---------------------------------------------------------------------- |
-|      React       | _ JavaScript library for building user interfaces or UI component _     |
+|      React       | _JavaScript library for building user interfaces or UI component_     |
 |   React Router   | _A tool that allows you to handle routes in a web app, using dynamic routing_     |
 |   Ruby on Rails  | _A model–view–controller framework, written in Ruby_     |   
-|  rack-cors gem   | _ handling Cross-Origin Resource Sharing (CORS)|
+|  rack-cors gem   | _handling Cross-Origin Resource Sharing (CORS)_|
 
 <br>
 
