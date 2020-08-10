@@ -146,8 +146,7 @@ src
 | Create updatecomment            |    H     |     3 hrs      |      hrs     |     TBD     |
 | Create header                   |    H     |     3 hrs      |      hrs     |     TBD     |
 | Create footer                   |    H     |     3 hrs      |      hrs     |     TBD     |
-
-| TOTAL                           |          |     36 hrs      |      hrs     |     TBD     |
+| TOTAL                           |          |     36 hrs     |      hrs     |     TBD     |
 
 
 
