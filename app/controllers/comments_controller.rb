@@ -4,9 +4,19 @@ class CommentsController < ApplicationController
 
   # GET /comments
   def index
-    @comments = Comment.all
+    # @comments = Comment.all
 
-    render json: @comments
+
+    #ask shay if this is correct
+
+    @post = Post.find(params[:post_id])
+    @comments = Comment.where(post_id: params[:post_id] )
+
+    
+
+    # render json: @comments
+
+    render json: @comments, include: {post: {include: :user}}, status: :ok
   end
 
   # GET /comments/1
@@ -42,7 +52,11 @@ class CommentsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_comment
-      @comment = Comment.find(params[:id])
+      # @comment = Comment.find(params[:id])
+
+      #ask shay 
+
+      @comment = Comment.where(post_id: params[:post_id]).find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.

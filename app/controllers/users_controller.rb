@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users
+    # render json: @users
+
+    #ask shay 
+
+    render json: @users, include: :posts, status: :ok
   end
 
   # GET /users/1
