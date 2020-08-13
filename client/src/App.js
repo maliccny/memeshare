@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
 import Main from './components/Main'
@@ -50,6 +51,7 @@ class App extends Component {
           handleLogin={this.handleLogin}
           handleRegister={this.handleRegister}
         />
+        <Footer/>
       </div>
     )
   }

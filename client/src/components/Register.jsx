@@ -22,7 +22,7 @@ export default class Register extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         handleRegister(this.state);
-        history.push('/');
+        history.push('/posts');
       }}>
         <h3>Register</h3>
         <label>

@@ -22,7 +22,7 @@ export default class Login extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         handleLogin(this.state);
-        history.push('/')
+        history.push('/posts')
       }}>
         <h3>Login</h3>
         <label>
