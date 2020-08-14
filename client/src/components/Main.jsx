@@ -8,9 +8,51 @@ import Posts from './Posts'
 import EditPost from './EditPost'
 import EditComment from './EditComment'
 
+import { getAllPosts, postPost, putPost } from '../services/posts'
+import { putComment } from '../services/comments'
+
 export default class Main extends Component {
+  state = {
+    posts: []
+  }
+  
+  componentDidMount() {
+    this.fetchPosts();
+  }
+
+ 
+  // axios calls for posts
+
+  fetchPosts = async () => {
+    const posts = await getAllPosts();
+    this.setState({ posts });
+  }
+
+  handlePostCreate = async (user_id, postData) => {
+    const newPost = await postPost(user_id, postData);
+    this.setState(prevState => ({
+      posts: [...prevState.posts, newPost]
+    }))
+  }
+
+  handlePostUpdate = async (user_id, id, postData) => {
+    const newPost = await putPost(user_id, id, postData);
+    this.setState(prevState => ({
+      posts: prevState.posts.map(post => post.id === parseInt(id) ? newPost : post)
+    }))
+  }
+
   
 
+  // axois calls for comments
+
+
+  handleCommentUpdate = async (user_id, post_id, id, commentData) => {
+    const newComment = await putComment(user_id, post_id, id, commentData);
+    this.setState(prevState => ({
+      comments: prevState.comments.map(comment => comment.id === parseInt(id) ? newComment : comment)
+    }))
+  }
 
   
 
@@ -31,16 +73,23 @@ export default class Main extends Component {
           />
         )} />
         <Route exact path='/posts' render={() => (
-          <Posts/>
+          <Posts
+            posts={this.state.posts}
+            handlePostCreate={this.handlePostCreate}
+          />
         )} />
-        <Route exact path='/posts' render={() => (
-          <PostDetail />
+        <Route exact path='/post/:id' render={() => (
+          <PostDetail/>
         )} />
-        <Route exact path='/posts' render={() => (
-          <EditPost />
+        <Route exact path='/posts/:id/edit' render={() => (
+          <EditPost
+            handlePostUpdate={this.handlePostUpdate}
+          />
         )} />
-        <Route exact path='/posts' render={() => (
-          <EditComment />
+        <Route exact path='/comment/:id/edit' render={() => (
+          <EditComment
+            handleCommentUpdate={this.handleCommentUpdate}
+          />
         )} />
       </main>
     )
