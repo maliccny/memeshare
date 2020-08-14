@@ -10,8 +10,8 @@ export default class PostDetail extends Component {
     text: ""
   }
   componentDidMount() {
-    this.fetchOnePost()
-    this.fetchComments()
+    this.fetchOnePost(this.props.currentUser.id, this.props.match.params.id)
+    this.fetchComments(this.props.currentUser.id, this.props.match.params.id)
   }
 
   fetchOnePost = async (user_id, id) => {
@@ -38,7 +38,7 @@ export default class PostDetail extends Component {
   handleCommentCreate = async (user_id, post_id, commentData) => {
     const newComment = await postComment(user_id, post_id, commentData);
     this.setState(prevState => ({
-      posts: [...prevState.comments, newComment]
+      comments: [...prevState.comments, newComment]
     }))
   }
 
@@ -68,25 +68,25 @@ export default class PostDetail extends Component {
 
 
   render() {
-    const { post } = this.props;
-    console.log(this.props)
-    console.log(post)
+    const { post } = this.state;
+    // console.log(this.props)
+    // console.log(post)
     return (
       <div>
         <div className="onePost">
           
-          {/* <p>{post.title}</p> */}
-          {/* <img alt={post.title} src={post.img_url} />  */}
+          <p>{post.title}</p>
+          <img alt={post.title} src={post.img_url} /> 
         </div>
         <div className="postcomments">
           {this.state.comments.map(comment => (
-            <p>{comment}</p>
+            <p>{comment.text}</p>
           ))}
         </div>
         <div>
           <form onSubmit={(e) => {
             e.preventDefault();
-            this.handleCommentCreate(this.state);
+            this.handleCommentCreate(this.props.currentUser.id, this.props.match.params.id, { text: this.state.text });
             // history.push('/posts');
           }}>
             <h3>Create Comment</h3>

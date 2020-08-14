@@ -26,10 +26,10 @@ class CommentsController < ApplicationController
 
   # POST /comments
   def create
-    @comment = Comment.new(comment_params)
-    # @user = User.find(params[:user_id])
-    # @post = User.find(params[:post_id])
-    # @comment = Comment.where(user_id: @user.id, post_id: @post.id).new(comment_params)
+    # @comment = Comment.new(comment_params)
+    @user = User.find(params[:user_id])
+    @post = User.find(params[:post_id])
+    @comment = Comment.where(user_id: @user.id, post_id: @post.id).new(comment_params)
 
 
     if @comment.save
