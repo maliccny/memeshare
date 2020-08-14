@@ -10,16 +10,16 @@ export default class Posts extends Component {
 
 
   handleChange = (e) => {
-    const { value } = e.target;
+    const { name, value } = e.target;
     this.setState({
-      name: value
+      [name]: value
     })
   }
 
 
 
   render() {
-    const { handlePostCreate, history, posts } = this.props;
+    const { handlePostCreate, history, posts, currentUser } = this.props;
     return (
       <div>
         <div>
@@ -35,7 +35,7 @@ export default class Posts extends Component {
         <div>
           <form onSubmit={(e) => {
             e.preventDefault();
-            handlePostCreate(this.state);
+            handlePostCreate(currentUser.id, this.state);
             history.push('/posts');
           }}>
             <h3>Create Post</h3>
@@ -43,6 +43,7 @@ export default class Posts extends Component {
               Title:
           <input
                 type='text'
+                name = "title"
                 value={this.state.title}
                 onChange={this.handleChange}
               />
@@ -51,6 +52,7 @@ export default class Posts extends Component {
               img_url:
           <input
                 type='text'
+                name = "img_url"
                 value={this.state.img_url}
                 onChange={this.handleChange}
               />

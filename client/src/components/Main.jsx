@@ -72,13 +72,15 @@ export default class Main extends Component {
             handleRegister={handleRegister}
           />
         )} />
-        <Route exact path='/posts' render={() => (
+        <Route exact path='/posts' render={(props) => (
           <Posts
+            {...props}
             posts={this.state.posts}
             handlePostCreate={this.handlePostCreate}
+            currentUser = {this.props.currentUser}
           />
         )} />
-        <Route exact path='/post/:id' render={() => (
+        <Route exact path='/posts/:id' render={() => (
           <PostDetail/>
         )} />
         <Route exact path='/posts/:id/edit' render={() => (
