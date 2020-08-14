@@ -5,15 +5,19 @@ export default function Header(props) {
   const { currentUser, handleLogout } = props;
   return (
     <header>
-      <Link to='/'><h1>MemeShare</h1></Link>
+      {/* <Link to='/login'><h1>MemeShare</h1></Link> */}
 
       {currentUser ? (
         <>
+          <Link to='/posts'><h1>MemeShare</h1></Link>
           <p>{currentUser.username}</p>
           <button onClick={handleLogout}>Logout</button>
         </>
       ) : (
-          <Link to='/login'>Sign In</Link>
+          <>
+            <Link to='/login'><h1>MemeShare</h1></Link>
+            <Link to='/login'>Sign In</Link>
+          </>
         )
       }
     </header >
