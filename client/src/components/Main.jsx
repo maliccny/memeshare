@@ -82,7 +82,7 @@ export default class Main extends Component {
         )} />
         <Route exact path='/posts/:id' render={() => (
           <PostDetail
-            {...props}
+            // {...props}
           />
         )} />
         <Route exact path='/posts/:id/edit' render={() => (
