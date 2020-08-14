@@ -68,12 +68,15 @@ export default class PostDetail extends Component {
 
 
   render() {
-    const { post} = this.props;
+    const { post } = this.props;
+    console.log(this.props)
+    console.log(post)
     return (
       <div>
         <div className="onePost">
-          <p>{post.title}</p>
-          <img alt={post.title} src={post.img_url} /> 
+          
+          {/* <p>{post.title}</p> */}
+          {/* <img alt={post.title} src={post.img_url} />  */}
         </div>
         <div className="postcomments">
           {this.state.comments.map(comment => (
@@ -91,6 +94,7 @@ export default class PostDetail extends Component {
               Text:
           <input
                 type='text'
+                name = "text"
                 value={this.state.text}
                 onChange={this.handleChange}
               />
