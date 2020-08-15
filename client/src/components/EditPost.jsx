@@ -37,7 +37,7 @@ export default class UpdatePost extends Component {
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        handlePostUpdate(this.props.currentUser.id, id, this.state);
+        handlePostUpdate(this.props.currentUser.id, post.id, this.state);
         history.push('/posts/:id');
       }}>
         <h3>Update Post</h3>
