@@ -80,19 +80,24 @@ export default class Main extends Component {
             currentUser = {this.props.currentUser}
           />
         )} />
-        <Route exact path='/posts/:id' render={() => (
+        <Route exact path='/posts/:id' render={(props) => (
           <PostDetail
-            // {...props}
+            {...props}
+            currentUser={this.props.currentUser}
           />
         )} />
-        <Route exact path='/posts/:id/edit' render={() => (
+        <Route exact path='/posts/:id/edit' render={(props) => (
           <EditPost
+            {...props}
             handlePostUpdate={this.handlePostUpdate}
+            currentUser={this.props.currentUser}
           />
         )} />
-        <Route exact path='/comment/:id/edit' render={() => (
+        <Route exact path='/posts/:post_id/comment/:id/edit' render={(props) => (
           <EditComment
+            {...props}
             handleCommentUpdate={this.handleCommentUpdate}
+            currentUser={this.props.currentUser}
           />
         )} />
       </main>
