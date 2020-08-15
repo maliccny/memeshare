@@ -16,11 +16,21 @@ User.destroy_all
 
 puts "#{User.count} users created"
 
-@post1 = Post.create!(title: 'Snapchat Meme', img_url: 'https://i.redd.it/tgulxj3ou7p41.jpg', user: @admin)
-@post2 = Post.create!(title: 'Snapchat Meme2', img_url: 'https://i.redd.it/tgulxj3ou7p41.jpg', user: @admin)
+@post1 = Post.create!(title: 'Meme1', img_url: 'https://i.redd.it/tgulxj3ou7p41.jpg', user: @admin)
+@post2 = Post.create!(title: 'Meme2', img_url: 'https://i.imgur.com/Cw7KIM1.jpg', user: @admin)
 
-@post3 = Post.create!(title: 'Snapchat Meme3', img_url: 'https://i.redd.it/tgulxj3ou7p41.jpg', user: @user1)
-@post4 = Post.create!(title: 'Snapchat Meme4', img_url: 'https://i.redd.it/tgulxj3ou7p41.jpg', user: @user1)
+@post3 = Post.create!(title: 'Meme3', img_url: 'https://i.redd.it/5vvpn6tlghw41.jpg', user: @user1)
+@post4 = Post.create!(title: 'Meme4', img_url: 'https://i.redd.it/2ry044pdv2141.jpg', user: @user1)
+
+
+@post5 = Post.create!(title: 'Meme5', img_url: 'https://i.redd.it/th44b0a1dn041.jpg', user: @admin)
+@post6 = Post.create!(title: 'Meme6', img_url: 'https://i.redd.it/o1gnotfxi4k01.png', user: @admin)
+@post7 = Post.create!(title: 'Meme7', img_url: 'https://i.redd.it/x6snxvaykg301.jpg', user: @admin)
+@post8 = Post.create!(title: 'Meme8', img_url: 'https://i.redd.it/s0nb3l5tb8a51.png', user: @admin)
+@post9 = Post.create!(title: 'Meme9', img_url: 'https://i.redd.it/tgulxj3ou7p41.jpg', user: @admin)
+@post10 = Post.create!(title: 'Meme10', img_url: 'https://i.redd.it/jd25yqv8xsf31.jpg', user: @admin)
+@post11 = Post.create!(title: 'Meme11', img_url: 'https://i.redd.it/rh977vd6pvb41.jpg', user: @admin)
+@post12 = Post.create!(title: 'Meme12', img_url: 'https://i.redd.it/08sz26e91k841.jpg', user: @admin)
 
 
 
