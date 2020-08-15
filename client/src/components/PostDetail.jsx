@@ -27,7 +27,7 @@ export default class PostDetail extends Component {
     // this.setState(prevState => ({
     //   posts: prevState.posts.filter(post => post.id !== id)
     // }))
-    // history.push('/posts');
+    this.props.history.push('/posts');
 
   }
 
@@ -76,31 +76,26 @@ export default class PostDetail extends Component {
     // console.log(post)
     return (
       <div>
-        {/* {if this.props.currentUser.id === post.user_id {
+        {this.props.currentUser.id === post.user_id ?
           <div className="onePost">
             <p>{post.title}</p>
             <img alt={post.title} src={post.img_url} />
             <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
             <button onClick={() => this.handlePostDelete(this.props.currentUser.id, post.id)}>Delete Post</button>
           </div>
-        } else {
+        : 
           <div className="onePost">
             <p>{post.title}</p>
             <img alt={post.title} src={post.img_url} />
           </div>
-          }
-        }  */}
-        <div className="onePost">
-          <p>{post.title}</p>
-          <img alt={post.title} src={post.img_url} />
-          <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
-          <button onClick={() => this.handlePostDelete(this.props.currentUser.id, post.id)}>Delete Post</button>
-        </div>
+        } 
         <div className="postcomments">
           {this.state.comments.map(comment => (
-            <p>{comment.text}</p>
-            // <Link to={`/comment/${post.id}/edit`}><button>Edit Comment</button></Link>
-            // <button onClick={() => this.handleCommentDelete(this.props.currentUser.id, comment.post_id, comment.id)}>Delete Comment</button>
+            <>
+              <p>{comment.text}</p>
+              <Link to={`/posts/${post.id}/comment/${comment.id}/edit`}><button>Edit Comment</button></Link>
+              <button onClick={() => this.handleCommentDelete(this.props.currentUser.id, comment.post_id, comment.id)}>Delete Comment</button>
+            </>
           ))}
         </div>
         <div>

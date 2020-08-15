@@ -93,7 +93,7 @@ export default class Main extends Component {
             currentUser={this.props.currentUser}
           />
         )} />
-        <Route exact path='/comment/:id/edit' render={(props) => (
+        <Route exact path='/posts/:post_id/comment/:id/edit' render={(props) => (
           <EditComment
             {...props}
             handleCommentUpdate={this.handleCommentUpdate}

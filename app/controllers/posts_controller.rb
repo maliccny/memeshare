@@ -47,7 +47,8 @@ class PostsController < ApplicationController
 
       #ask shay
 
-      @post = Post.where(user_id: params[:user_id]).find(params[:id])
+      # @post = Post.where(user_id: params[:user_id]).find(params[:id])
+       @post = Post.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
