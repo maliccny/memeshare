@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { getOnePost, deletePost } from '../services/posts'
 import { getAllComments, postComment, deleteComment } from '../services/comments'
+import { Link } from 'react-router-dom';
 
 
 export default class PostDetail extends Component {
@@ -23,9 +24,11 @@ export default class PostDetail extends Component {
 
   handlePostDelete = async (user_id, id) => {
     await deletePost(user_id, id);
-    this.setState(prevState => ({
-      posts: prevState.posts.filter(post => post.id !== id)
-    }))
+    // this.setState(prevState => ({
+    //   posts: prevState.posts.filter(post => post.id !== id)
+    // }))
+    // history.push('/posts');
+
   }
 
   // axios call for comments
@@ -42,10 +45,10 @@ export default class PostDetail extends Component {
     }))
   }
 
-  handleCommentDelete = async (user_id, id) => {
-    await deleteComment(user_id, id);
+  handleCommentDelete = async (user_id, post_id, id) => {
+    await deleteComment(user_id, post_id, id);
     this.setState(prevState => ({
-      posts: prevState.posts.filter(post => post.id !== id)
+      comments: prevState.comments.filter(comment => comment.id !== id)
     }))
   }
 
@@ -73,14 +76,31 @@ export default class PostDetail extends Component {
     // console.log(post)
     return (
       <div>
+        {/* {if this.props.currentUser.id === post.user_id {
+          <div className="onePost">
+            <p>{post.title}</p>
+            <img alt={post.title} src={post.img_url} />
+            <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
+            <button onClick={() => this.handlePostDelete(this.props.currentUser.id, post.id)}>Delete Post</button>
+          </div>
+        } else {
+          <div className="onePost">
+            <p>{post.title}</p>
+            <img alt={post.title} src={post.img_url} />
+          </div>
+          }
+        }  */}
         <div className="onePost">
-          
           <p>{post.title}</p>
-          <img alt={post.title} src={post.img_url} /> 
+          <img alt={post.title} src={post.img_url} />
+          <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
+          <button onClick={() => this.handlePostDelete(this.props.currentUser.id, post.id)}>Delete Post</button>
         </div>
         <div className="postcomments">
           {this.state.comments.map(comment => (
             <p>{comment.text}</p>
+            // <Link to={`/comment/${post.id}/edit`}><button>Edit Comment</button></Link>
+            // <button onClick={() => this.handleCommentDelete(this.props.currentUser.id, post.id)}>Delete Comment</button>
           ))}
         </div>
         <div>

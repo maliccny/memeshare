@@ -86,8 +86,9 @@ export default class Main extends Component {
             currentUser={this.props.currentUser}
           />
         )} />
-        <Route exact path='/posts/:id/edit' render={() => (
+        <Route exact path='/posts/:id/edit' render={(props) => (
           <EditPost
+            {...props}
             handlePostUpdate={this.handlePostUpdate}
           />
         )} />
