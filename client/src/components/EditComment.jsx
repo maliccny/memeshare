@@ -36,7 +36,9 @@ export default class UpdateComment extends Component {
       <form onSubmit={(e) => {
         e.preventDefault();
         handleCommentUpdate(this.props.currentUser.id, this.props.match.params.post_id, this.props.match.params.id, this.state);
-        history.push(`/posts/${this.props.match.params.post_id}`);
+        // history.push(`/posts/${this.props.match.params.post_id}`);
+        history.push(`/posts`);
+
       }}>
         <h3>Update Comment</h3>
         <label>
