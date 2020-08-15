@@ -37,14 +37,15 @@ export default class UpdatePost extends Component {
     return (
       <form onSubmit={(e) => {
         e.preventDefault();
-        handlePostUpdate(id, this.state);
-        history.push('/posts');
+        handlePostUpdate(this.props.currentUser.id, this.props.match.params.id, this.state);
+        history.push(`/posts/${this.props.match.params.id}`);
       }}>
         <h3>Update Post</h3>
         <label>
           Title:
           <input
             type='text'
+            name = "title"
             value={this.state.title}
             onChange={this.handleChange}
           />
@@ -53,6 +54,7 @@ export default class UpdatePost extends Component {
           img_url:
           <input
             type='text'
+            name = "img_url"
             value={this.state.img_url}
             onChange={this.handleChange}
           />
