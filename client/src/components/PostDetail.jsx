@@ -100,7 +100,7 @@ export default class PostDetail extends Component {
           {this.state.comments.map(comment => (
             <p>{comment.text}</p>
             // <Link to={`/comment/${post.id}/edit`}><button>Edit Comment</button></Link>
-            // <button onClick={() => this.handleCommentDelete(this.props.currentUser.id, post.id)}>Delete Comment</button>
+            // <button onClick={() => this.handleCommentDelete(this.props.currentUser.id, comment.post_id, comment.id)}>Delete Comment</button>
           ))}
         </div>
         <div>
