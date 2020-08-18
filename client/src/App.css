@@ -4,8 +4,15 @@
   border: 1px solid black;
 }
 
+.register-box {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
+}
+
 a {
   text-decoration: none;
+  color: #b67929;
 }
 
 .login-submit-button {
@@ -16,6 +23,8 @@ a {
   display: flex;
   justify-content: space-between;
   border-bottom: 2px solid black;
+  background: #00243f;
+  color: #b67929;
 }
 
 .sign-in {
@@ -25,4 +34,44 @@ a {
 .footer {
   text-align: center;
   border-top: 2px solid black;
+  background: #00243f;
+  color: #b67929;
+}
+
+.login-register-button {
+  margin-bottom: 5%;
+}
+
+.register-email-input {
+  margin-left: 9%;
+}
+
+.register-button {
+  margin-bottom: 5%;
+}
+
+.postdetail-img {
+  width: 50%;
+}
+
+.posts-images {
+  width: 300px;
+}
+
+.posts {
+  display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 40px;
+    width: 90vw;
+}
+
+.individual-posts {
+  align-items: center;
+    transition: all .25s;
+    padding: 20px;
+    margin: 10px 10px 60px;
+    box-shadow: 0 0 3px 1px #cecece;
+    text-align: center;
+    color: #000;
 }

@@ -81,14 +81,14 @@ export default class PostDetail extends Component {
         {this.props.currentUser && this.props.currentUser.id === post.user_id ?
           <div className="onePost">
             <p>{post.title}</p>
-            <img alt={post.title} src={post.img_url} />
+            <img className="postdetail-img" alt={post.title} src={post.img_url} />
             <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
             <button onClick={() => this.handlePostDelete(this.props.currentUser.id, post.id)}>Delete Post</button>
           </div>
         : 
           <div className="onePost">
             <p>{post.title}</p>
-            <img alt={post.title} src={post.img_url} />
+            <img className="postdetail-img" alt={post.title} src={post.img_url} />
           </div>
         } 
         <div className="postcomments">

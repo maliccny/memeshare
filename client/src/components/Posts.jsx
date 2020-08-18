@@ -22,12 +22,14 @@ export default class Posts extends Component {
     const { handlePostCreate, history, posts, currentUser } = this.props;
     return (
       <div>
-        <div>
+        <div className="posts">
           {posts.map(post => (
             <React.Fragment key={post.id}>
               <Link to={`/posts/${post.id}`}>
-                <p>{post.title}</p>
-                <img alt={post.title} src={post.img_url} /> 
+                <div className="individual-posts">
+                  <p>{post.title}</p>
+                  <img className="posts-images" alt={post.title} src={post.img_url} /> 
+                </div> 
               </Link>
             </React.Fragment>
           ))}

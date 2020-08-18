@@ -19,44 +19,53 @@ export default class Register extends Component {
     const { handleRegister, history } = this.props;
 
     return (
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        handleRegister(this.state);
-        history.push('/posts');
-      }}>
-        <h3>Register</h3>
-        <label>
-          Username:
+      <div className="register-box">
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          handleRegister(this.state);
+          history.push('/posts');
+        }}>
+          <h3>Register</h3>
+          <div>
+            <label>
+              Username:
           <input
-            type="text"
-            name="username"
-            value={username}
-            onChange={this.handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Email:
+                type="text"
+                name="username"
+                value={username}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <br />
+          <div className="register-email-input">
+            <label>
+              Email:
           <input
-            type="text"
-            name="email"
-            value={email}
-            onChange={this.handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Password:
+                type="text"
+                name="email"
+                value={email}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <br />
+          <div>
+            <label>
+              Password:
           <input
-            type="password"
-            name="password"
-            value={password}
-            onChange={this.handleChange}
-          />
-        </label>
-        <br />
-        <button>Submit</button>
-      </form>
+                type="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          
+          <br />
+          <button className="register-button">Submit</button>
+        </form>
+      </div>
     )
   }
 }
