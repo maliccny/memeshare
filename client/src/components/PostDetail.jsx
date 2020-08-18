@@ -11,8 +11,10 @@ export default class PostDetail extends Component {
     text: ""
   }
   componentDidMount() {
-    this.fetchOnePost(this.props.currentUser.id, this.props.match.params.id)
-    this.fetchComments(this.props.currentUser.id, this.props.match.params.id)
+    if (this.props.currentUser) {
+      this.fetchOnePost(this.props.currentUser.id, this.props.match.params.id)
+      this.fetchComments(this.props.currentUser.id, this.props.match.params.id)
+    }
   }
 
   fetchOnePost = async (user_id, id) => {
@@ -76,7 +78,7 @@ export default class PostDetail extends Component {
     // console.log(post)
     return (
       <div>
-        {this.props.currentUser.id === post.user_id ?
+        {this.props.currentUser && this.props.currentUser.id === post.user_id ?
           <div className="onePost">
             <p>{post.title}</p>
             <img alt={post.title} src={post.img_url} />
