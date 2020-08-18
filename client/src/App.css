@@ -1,0 +1,28 @@
+.login-box {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+}
+
+.login-submit-button {
+  margin-left: 5%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+}
+
+.sign-in {
+  padding-top: 3%;
+}
+
+.footer {
+  text-align: center;
+  border-top: 2px solid black;
+}

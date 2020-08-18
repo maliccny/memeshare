@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import { loginUser, registerUser, removeToken, verifyUser } from './services/auth'
 import Main from './components/Main'
 import { withRouter } from 'react-router-dom';
+import './App.css';
 
 class App extends Component {
   state = {
