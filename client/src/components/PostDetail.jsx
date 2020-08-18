@@ -78,29 +78,33 @@ export default class PostDetail extends Component {
     // console.log(post)
     return (
       <div>
-        {this.props.currentUser && this.props.currentUser.id === post.user_id ?
-          <div className="onePost">
-            <p>{post.title}</p>
-            <img className="postdetail-img" alt={post.title} src={post.img_url} />
-            <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
-            <button onClick={() => this.handlePostDelete(this.props.currentUser.id, post.id)}>Delete Post</button>
+        <div className="post-and-comment-div">
+          {this.props.currentUser && this.props.currentUser.id === post.user_id ?
+            <div className="onePost">
+              <p>{post.title}</p>
+              <img className="postdetail-img" alt={post.title} src={post.img_url} />
+              <br />
+              <Link to={`/posts/${post.id}/edit`}><button>Edit Post</button></Link>
+              <button onClick={() => this.handlePostDelete(this.props.currentUser.id, post.id)}>Delete Post</button>
+            </div>
+            :
+            <div className="onePost">
+              <p>{post.title}</p>
+              <img className="postdetail-img" alt={post.title} src={post.img_url} />
+            </div>
+          }
+          <div className="postcomments">
+            {this.state.comments.map(comment => (
+              <div>
+                <p>{comment.text}</p>
+                <Link to={`/posts/${post.id}/comment/${comment.id}/edit`}><button>Edit Comment</button></Link>
+                <button onClick={() => this.handleCommentDelete(this.props.currentUser.id, comment.post_id, comment.id)}>Delete Comment</button>
+              </div>
+            ))}
           </div>
-        : 
-          <div className="onePost">
-            <p>{post.title}</p>
-            <img className="postdetail-img" alt={post.title} src={post.img_url} />
-          </div>
-        } 
-        <div className="postcomments">
-          {this.state.comments.map(comment => (
-            <>
-              <p>{comment.text}</p>
-              <Link to={`/posts/${post.id}/comment/${comment.id}/edit`}><button>Edit Comment</button></Link>
-              <button onClick={() => this.handleCommentDelete(this.props.currentUser.id, comment.post_id, comment.id)}>Delete Comment</button>
-            </>
-          ))}
         </div>
-        <div>
+        
+        <div className="create-comment-div">
           <form onSubmit={(e) => {
             e.preventDefault();
             this.handleCommentCreate(this.props.currentUser.id, this.props.match.params.id, { text: this.state.text });

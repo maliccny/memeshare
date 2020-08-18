@@ -87,3 +87,36 @@ a {
 .submit-button-post {
   padding: 5%;
 }
+
+
+.post-and-comment-div {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.create-comment-div {
+  text-align: center;
+  margin: 5% 30%;
+  border: 1px solid black;
+  padding-bottom: 2%;
+}
+
+.onePost {
+  text-align: center;
+}
+
+.postcomments {
+  padding-top: 7%;
+}
+
+.update-comment-div {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
+}
+
+.update-post-div {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
+}
