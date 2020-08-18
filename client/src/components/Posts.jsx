@@ -34,32 +34,39 @@ export default class Posts extends Component {
             </React.Fragment>
           ))}
         </div>
-        <div>
+        <div className="create-post">
           <form onSubmit={(e) => {
             e.preventDefault();
             handlePostCreate(currentUser.id, this.state);
             history.push('/posts');
           }}>
             <h3>Create Post</h3>
-            <label>
-              Title:
-          <input
-                type='text'
-                name = "title"
-                value={this.state.title}
-                onChange={this.handleChange}
-              />
-            </label>
-            <label>
-              img_url:
-          <input
-                type='text'
-                name = "img_url"
-                value={this.state.img_url}
-                onChange={this.handleChange}
-              />
-            </label>
-            <button>Submit</button>
+            <div>
+              <label>
+                Title:
+              <input
+                  type='text'
+                  name="title"
+                  value={this.state.title}
+                  onChange={this.handleChange}
+                />
+              </label>
+            </div>
+            <br />
+            <div>
+              <label>
+                img_url:
+              <input
+                  type='text'
+                  name="img_url"
+                  value={this.state.img_url}
+                  onChange={this.handleChange}
+                />
+              </label>
+            </div>
+            <div className="submit-button-post">
+              <button>Submit</button>
+            </div>
           </form>
         </div>
       </div>
