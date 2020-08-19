@@ -8,16 +8,18 @@ export default function Header(props) {
       {/* <Link to='/login'><h1>MemeShare</h1></Link> */}
 
       {currentUser ? (
-        <>
+        <div className="header">
           <Link to='/posts'><h1>MemeShare</h1></Link>
-          <p>{currentUser.username}</p>
-          <button onClick={handleLogout}>Logout</button>
-        </>
+          <div className="signed-in-username-logout">
+            <p>{currentUser.username}</p>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        </div>
       ) : (
-          <>
+          <div className="header">
             <Link to='/login'><h1>MemeShare</h1></Link>
-            <Link to='/login'>Sign In</Link>
-          </>
+            <Link className="sign-in" to='/login'>Sign In</Link>
+          </div>
         )
       }
     </header >

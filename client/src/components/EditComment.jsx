@@ -33,23 +33,30 @@ export default class UpdateComment extends Component {
   render() {
     const { handleCommentUpdate, history, id } = this.props;
     return (
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        handleCommentUpdate(this.props.currentUser.id, this.props.match.params.post_id, this.props.match.params.id, this.state);
-        history.push(`/posts/${this.props.match.params.post_id}`);
-      }}>
-        <h3>Update Comment</h3>
-        <label>
-          Text:
-          <input
-            type='text'
-            name = "text"
-            value={this.state.text}
-            onChange={this.handleChange}
-          />
-        </label>
-        <button>Submit</button>
-      </form>
+      <div className="update-comment-div">
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          handleCommentUpdate(this.props.currentUser.id, this.props.match.params.post_id, this.props.match.params.id, this.state);
+          // history.push(`/posts/${this.props.match.params.post_id}`);
+          history.push(`/posts`);
+
+        }}>
+          <h3>Update Comment</h3>
+          <div className="text-update">
+            <label>
+              Text:
+            <input
+                type='text'
+                name="text"
+                value={this.state.text}
+                onChange={this.handleChange}
+              />
+            </label>
+            <button>Submit</button>
+          </div>
+        </form>
+      </div>
+      
     )
   }
 }

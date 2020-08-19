@@ -49,9 +49,9 @@ export default class Main extends Component {
 
   handleCommentUpdate = async (user_id, post_id, id, commentData) => {
     const newComment = await putComment(user_id, post_id, id, commentData);
-    this.setState(prevState => ({
-      comments: prevState.comments.map(comment => comment.id === parseInt(id) ? newComment : comment)
-    }))
+    // this.setState(prevState => ({
+    //   comments: prevState.comments.map(comment => comment.id === parseInt(id) ? newComment : comment)
+    // }))
   }
 
   
