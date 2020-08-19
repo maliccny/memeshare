@@ -1,38 +1,134 @@
-/* .App {
+.login-box {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
+}
+
+.register-box {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: #b67929;
+}
+
+.login-submit-button {
+  margin-left: 5%;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid black;
+  background: #00243f;
+  color: #b67929;
+}
+
+.sign-in {
+  padding-top: 3%;
+}
+
+.footer {
+  text-align: center;
+  border-top: 2px solid black;
+  background: #00243f;
+  color: #b67929;
+}
+
+.login-register-button {
+  margin-bottom: 5%;
+}
+
+.register-email-input {
+  margin-left: 9%;
+}
+
+.register-button {
+  margin-bottom: 5%;
+}
+
+.postdetail-img {
+  width: 50%;
+}
+
+.posts-images {
+  width: 300px;
+  height: 400px;
+}
+
+.posts {
+  display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 40px;
+    width: 90vw;
+}
+
+.individual-posts {
+  align-items: center;
+    transition: all .25s;
+    padding: 20px;
+    margin: 10px 10px 60px;
+    box-shadow: 0 0 3px 1px #cecece;
+    text-align: center;
+    color: #000;
+}
+
+.create-post {
+  text-align: center;
+  margin: 0% 30%;
+  border: 1px solid black;
+  margin-bottom: 5%;
+}
+
+.submit-button-post {
+  padding: 5%;
+}
+
+
+.post-and-comment-div {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.create-comment-div {
+  text-align: center;
+  margin: 5% 30%;
+  border: 1px solid black;
+  padding-bottom: 2%;
+}
+
+.onePost {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.postcomments {
+  padding-top: 7%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.update-comment-div {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.update-post-div {
+  text-align: center;
+  margin: 25% 30%;
+  border: 1px solid black;
 }
 
-.App-link {
-  color: #61dafb;
+.img-input-update {
+  margin-right: 5%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.update-post-button {
+  margin-bottom: 5%;
+}
+
+.text-update {
+  margin-bottom: 5%;
+}

@@ -35,32 +35,44 @@ export default class UpdatePost extends Component {
   render() {
     const { handlePostUpdate, history, id } = this.props;
     return (
-      <form onSubmit={(e) => {
-        e.preventDefault();
-        handlePostUpdate(this.props.currentUser.id, this.props.match.params.id, this.state);
-        history.push(`/posts/${this.props.match.params.id}`);
-      }}>
-        <h3>Update Post</h3>
-        <label>
-          Title:
-          <input
-            type='text'
-            name = "title"
-            value={this.state.title}
-            onChange={this.handleChange}
-          />
-        </label>
-        <label>
-          img_url:
-          <input
-            type='text'
-            name = "img_url"
-            value={this.state.img_url}
-            onChange={this.handleChange}
-          />
-        </label>
-        <button>Submit</button>
-      </form>
+      <div className="update-post-div">
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          handlePostUpdate(this.props.currentUser.id, this.props.match.params.id, this.state);
+          history.push(`/posts/${this.props.match.params.id}`);
+        }}>
+          <h3>Update Post</h3>
+          <div className="title-input-update">
+            <label>
+              Title:
+            <input
+                type='text'
+                name="title"
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <br />
+          <div className="img-input-update">
+            <label>
+              img_url:
+            <input
+                type='text'
+                name="img_url"
+                value={this.state.img_url}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          
+          <br />
+          <div className="update-post-button">
+            <button>Submit</button>
+          </div>
+        </form>
+      </div>
+      
     )
   }
 }
