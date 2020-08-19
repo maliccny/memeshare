@@ -120,7 +120,9 @@ export default class PostDetail extends Component {
                 onChange={this.handleChange}
               />
             </label>
-            <button>Submit</button>
+            <div className="submit-comment">
+              <button>Submit</button>
+            </div>
           </form>
         </div>
       </div>

@@ -132,3 +132,70 @@ a {
 .text-update {
   margin-bottom: 5%;
 }
+
+@media (max-width: 375px){
+  .login-box {
+    text-align: center;
+    margin: 25% 15%;
+    border: 1px solid black;
+  }
+
+  .sign-in {
+    padding-top: 8%;
+  }
+
+  .register-box {
+    text-align: center;
+    margin: 25% 4%;
+    border: 1px solid black;
+  }
+
+  .posts {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 40px;
+    width: 90vw;
+    padding: 0 5%;
+  }
+
+  .create-post {
+    text-align: center;
+    margin: 0% 25%;
+    border: 1px solid black;
+    margin-bottom: 5%;
+  } 
+
+  .create-comment-div {
+    text-align: center;
+    margin: 5% 25%;
+    border: 1px solid black;
+    padding-bottom: 2%;
+  } 
+
+  .submit-comment {
+    margin-top: 5%;
+  }
+
+  .postcomments {
+    padding: 36px 19%;
+  }
+
+  .update-post-div {
+    text-align: center;
+    margin: 25% 16%;
+    border: 1px solid black;
+  }
+
+  .update-comment-div {
+    text-align: center;
+    margin: 25% 14%;
+    border: 1px solid black;
+  }
+} 
+
+@media (max-width: 768px){
+  .postcomments {
+    padding: 38px 34%;
+  } 
+} 
