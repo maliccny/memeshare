@@ -42,27 +42,34 @@ export default class UpdatePost extends Component {
           history.push(`/posts/${this.props.match.params.id}`);
         }}>
           <h3>Update Post</h3>
-          <label>
-            Title:
-          <input
-              type='text'
-              name="title"
-              value={this.state.title}
-              onChange={this.handleChange}
-            />
-          </label>
-          <br/>
-          <label>
-            img_url:
-          <input
-              type='text'
-              name="img_url"
-              value={this.state.img_url}
-              onChange={this.handleChange}
-            />
-          </label>
-          <br/>
-          <button>Submit</button>
+          <div className="title-input-update">
+            <label>
+              Title:
+            <input
+                type='text'
+                name="title"
+                value={this.state.title}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          <br />
+          <div className="img-input-update">
+            <label>
+              img_url:
+            <input
+                type='text'
+                name="img_url"
+                value={this.state.img_url}
+                onChange={this.handleChange}
+              />
+            </label>
+          </div>
+          
+          <br />
+          <div className="update-post-button">
+            <button>Submit</button>
+          </div>
         </form>
       </div>
       

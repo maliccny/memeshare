@@ -120,3 +120,11 @@ a {
   margin: 25% 30%;
   border: 1px solid black;
 }
+
+.img-input-update {
+  margin-right: 5%;
+}
+
+.update-post-button {
+  margin-bottom: 5%;
+}
