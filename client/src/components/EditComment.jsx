@@ -42,16 +42,18 @@ export default class UpdateComment extends Component {
 
         }}>
           <h3>Update Comment</h3>
-          <label>
-            Text:
-          <input
-              type='text'
-              name="text"
-              value={this.state.text}
-              onChange={this.handleChange}
-            />
-          </label>
-          <button>Submit</button>
+          <div className="text-update">
+            <label>
+              Text:
+            <input
+                type='text'
+                name="text"
+                value={this.state.text}
+                onChange={this.handleChange}
+              />
+            </label>
+            <button>Submit</button>
+          </div>
         </form>
       </div>
       
