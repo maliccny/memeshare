@@ -156,8 +156,79 @@ src
 
 ## Code Showcase
 
-> Fill in Later
+Ternary for switiching between different headers depending on logged in or logged out, with current used passed as a prop down to the header component. 
 
-## Code Issues & Resolutions
+```
+class App extends Component {
+  state = {
+    currentUser: null
+  }
 
-> Fill in Later
+  componentDidMount() {
+    this.handleVerify();
+  }
+
+  handleLogin = async (userData) => {
+    const currentUser = await loginUser(userData);
+    this.setState({ currentUser })
+  }
+
+  handleRegister = async (userData) => {
+    const currentUser = await registerUser(userData);
+    this.setState({ currentUser })
+  }
+
+  handleLogout = () => {
+    this.setState({
+      currentUser: null
+    })
+    localStorage.removeItem('authToken');
+    removeToken();
+    this.props.history.push('/')
+  }
+
+  handleVerify = async () => {
+    const currentUser = await verifyUser();
+    this.setState({ currentUser });
+  }
+
+  render() {
+    return (
+      <div>
+        <Header
+          currentUser={this.state.currentUser}
+          handleLogout={this.handleLogout}
+        />
+        <Main
+          currentUser={this.state.currentUser}
+          handleLogin={this.handleLogin}
+          handleRegister={this.handleRegister}
+        />
+        <Footer/>
+      </div>
+    )
+  }
+}
+
+
+<header>
+      {/* <Link to='/login'><h1>MemeShare</h1></Link> */}
+
+      {currentUser ? (
+        <div className="header">
+          <Link to='/posts'><h1>MemeShare</h1></Link>
+          <div className="signed-in-username-logout">
+            <p>{currentUser.username}</p>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        </div>
+      ) : (
+          <div className="header">
+            <Link to='/login'><h1>MemeShare</h1></Link>
+            <Link className="sign-in" to='/login'>Sign In</Link>
+          </div>
+        )
+      }
+    </header >
+```
+
