@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from "react-router-dom";
 
 import Login from './Login'
 import Register from './Register'
@@ -60,47 +60,61 @@ export default class Main extends Component {
     const { handleLogin, handleRegister } = this.props;
     return (
       <main>
-        <Route path='/login' render={(props) => (
-          <Login
-            {...props}
-            handleLogin={handleLogin}
-          />
-        )} />
-        <Route path='/register' render={(props) => (
-          <Register
-            {...props}
-            handleRegister={handleRegister}
-          />
-        )} />
-        <Route exact path='/posts' render={(props) => (
-          <Posts
-            {...props}
-            posts={this.state.posts}
-            handlePostCreate={this.handlePostCreate}
-            currentUser = {this.props.currentUser}
-          />
-        )} />
-        <Route exact path='/posts/:id' render={(props) => (
-          <PostDetail
-            {...props}
-            currentUser={this.props.currentUser}
-          />
-        )} />
-        <Route exact path='/posts/:id/edit' render={(props) => (
-          <EditPost
-            {...props}
-            handlePostUpdate={this.handlePostUpdate}
-            currentUser={this.props.currentUser}
-          />
-        )} />
-        <Route exact path='/posts/:post_id/comment/:id/edit' render={(props) => (
-          <EditComment
-            {...props}
-            handleCommentUpdate={this.handleCommentUpdate}
-            currentUser={this.props.currentUser}
-          />
-        )} />
+        <Route exact path="/">
+          <Redirect to="/login" />
+        </Route>
+        <Route
+          path="/login"
+          render={(props) => <Login {...props} handleLogin={handleLogin} />}
+        />
+        <Route
+          path="/register"
+          render={(props) => (
+            <Register {...props} handleRegister={handleRegister} />
+          )}
+        />
+        <Route
+          exact
+          path="/posts"
+          render={(props) => (
+            <Posts
+              {...props}
+              posts={this.state.posts}
+              handlePostCreate={this.handlePostCreate}
+              currentUser={this.props.currentUser}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/posts/:id"
+          render={(props) => (
+            <PostDetail {...props} currentUser={this.props.currentUser} />
+          )}
+        />
+        <Route
+          exact
+          path="/posts/:id/edit"
+          render={(props) => (
+            <EditPost
+              {...props}
+              handlePostUpdate={this.handlePostUpdate}
+              currentUser={this.props.currentUser}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/posts/:post_id/comment/:id/edit"
+          render={(props) => (
+            <EditComment
+              {...props}
+              handleCommentUpdate={this.handleCommentUpdate}
+              currentUser={this.props.currentUser}
+            />
+          )}
+        />
       </main>
-    )
+    );
   }
 }
