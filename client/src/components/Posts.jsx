@@ -23,53 +23,63 @@ export default class Posts extends Component {
     return (
       <div>
         <div className="posts">
-          {posts.map(post => (
+          {posts.map((post) => (
             <React.Fragment key={post.id}>
               <Link to={`/posts/${post.id}`}>
                 <div className="individual-posts">
                   <p>{post.title}</p>
-                  <img className="posts-images" alt={post.title} src={post.img_url} /> 
-                </div> 
+                  <img
+                    className="posts-images"
+                    alt={post.title}
+                    src={post.img_url}
+                  />
+                </div>
               </Link>
             </React.Fragment>
           ))}
         </div>
-        <div className="create-post">
-          <form onSubmit={(e) => {
-            e.preventDefault();
-            handlePostCreate(currentUser.id, this.state);
-            history.push('/posts');
-          }}>
-            <h3>Create Post</h3>
-            <div>
-              <label>
-                Title:
-              <input
-                  type='text'
+        <div className="create-post-container">
+          <div className="card">
+            <form
+              className="card-form"
+              onSubmit={(e) => {
+                e.preventDefault();
+                handlePostCreate(currentUser.id, this.state);
+                history.push("/posts");
+              }}
+            >
+              <div className="card-image">
+                <h2 className="card-heading">Create Post</h2>
+              </div>
+              <div className="input">
+                <input
+                  className="input-field"
+                  type="text"
                   name="title"
                   value={this.state.title}
                   onChange={this.handleChange}
+                  required
                 />
-              </label>
-            </div>
-            <br />
-            <div>
-              <label>
-                img_url:
-              <input
-                  type='text'
+                <label className="input-label">Title</label>
+              </div>
+              <div className="input">
+                <input
+                  className="input-field"
+                  type="text"
                   name="img_url"
                   value={this.state.img_url}
                   onChange={this.handleChange}
+                  required
                 />
-              </label>
-            </div>
-            <div className="submit-button-post">
-              <button>Submit</button>
-            </div>
-          </form>
+                <label className="input-label">Image URL</label>
+              </div>
+              <div class="action">
+                <button class="action-button">Submit</button>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    )
+    );
   }
 }
